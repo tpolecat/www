@@ -1,5 +1,4 @@
 [submodule "themes/hextra"]
 	path = themes/hextra
 	url = https://github.com/imfing/hextra
-	ignore = untracked
 
