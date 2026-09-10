@@ -1,0 +1,54 @@
+title: tpolecat industries
+theme: hextra
+markup:
+
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: Posts
+      pageRef: /blog
+      weight: 1
+    - name: Projects
+      pageRef: /docs
+      weight: 2
+    - name: Search
+      weight: 3
+      params:
+        type: search
+    - name: Mastodon
+      weight: 4
+      url: "https://mastodon.social/@tpolecat"
+      params:
+        icon: mastodon
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+  footer:
+    displayCopyright: false
+    displayPoweredBy: false
+
+  # editURL:
+  #   enable: false
+  #   base: "https://github.com/user/repo/edit/main/content"
+
+  # Search
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+
+  externalLinkDecoration: true
