@@ -3,7 +3,7 @@ title: Testing GALs with Minipro
 date: 2026-09-10T10:37:58-05:00
 ---
 
-![](assets/tl866.png)
+![](tl866.png)
 
 I have used GALs a lot and always ended up testing them on breadboards with jumper wires, which doesn't inspire a lot of confidence. But I recently discovered that I can write comprehensive test suites and run them with [minipro](https://gitlab.com/DavidGriffith/minipro). Here's how it works.
 

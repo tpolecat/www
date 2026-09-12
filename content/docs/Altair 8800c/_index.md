@@ -2,7 +2,7 @@
 title: Altair 8800c
 ---
 
-![](assets/bear.png)
+![](bear.png)
 
 The [Altair 8800c](https://deramp.com/altair_8800c.html) is an extremely faithful reproduction of the original Altair 8800 from 1975, built with any combination of new and old parts. It is not a kit, and there are no instructions. Each one is a unique and personal journey for the builder.
 

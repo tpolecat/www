@@ -7,15 +7,15 @@ weight: 2
 
 In order to attach floppy drives to an Altair, one must first have some floppy drives. I got this DEC RX-180 on eBay with no real expectation that it would work, but it wasn't super hard to get it going. These are single-sided, single-density drives that give you about 90k each using the Altair Minidisk adapter (or in my case the [FDC+](https://deramp.com/fdc_plus.html) in Minidisk mode).
 
-![](assets/rx180.png)
+![](rx180.png)
 
 The rear connector is a DB-25 instead of a ribbon cable, which is much nicer to work with when you're running cables around in a rack, but I had to figure out what was connected to what. It turns out they used the same pin numbering as on the standard ribbon connector, so it ended up not being a big deal. Other than a shorted tantalum capacitor and the drives being out of alignment it ended up being pretty easy to get going.
 
 {{< tabs >}}
 
-  {{< tab name="Connections" >}}![](assets/wires.png "Discovering the pinout."){{< /tab >}}
-  {{< tab name="Bad Capacitor" >}}![](assets/tantalum.png "The culprit is found."){{< /tab >}}
-  {{< tab name="Drive Alignment" >}}![](assets/alignment.png "Trying to align the drives without an alignment disk."){{< /tab >}}
+  {{< tab name="Connections" >}}![](wires.png "Discovering the pinout."){{< /tab >}}
+  {{< tab name="Bad Capacitor" >}}![](tantalum.png "The culprit is found."){{< /tab >}}
+  {{< tab name="Drive Alignment" >}}![](alignment.png "Trying to align the drives without an alignment disk."){{< /tab >}}
 
 {{< /tabs >}}
 
@@ -28,7 +28,7 @@ To get it running I hooked up minicom on my Mac to the first serial port and sta
 
 At this point I could boot Disk Basic and various flavors of CP/M.
 
-<video src="assets/boot.mp4" controls>Your browser does not support the video tag.</video>
+<video src="boot.mp4" controls>Your browser does not support the video tag.</video>
 
 ### Inauthentic Floppy Drives
 
@@ -36,15 +36,15 @@ At some point I started trying to write nontrivial programs on the Altair and wa
 
 Of course the eBay drives were filthy and needed a deep cleaning, so I had to do a full disassembly.
 
-![](assets/teac_1.png)
+![](teac_1.png)
 
 I also needed to figure out an enclosure for them, but I had an old Compaq DLT drive whith a chassis that seemed to be the right size, and with some dremeling it all came together.
 
 {{< tabs >}}
 
-  {{< tab name="One" >}}![](assets/teac_2.png "Does it even work?"){{< /tab >}}
-  {{< tab name="Two" >}}![](assets/teac_3.png "Ok seems to fit."){{< /tab >}}
-  {{< tab name="Three" >}}![](assets/teac_4.png "The final product."){{< /tab >}}
+  {{< tab name="One" >}}![](teac_2.png "Does it even work?"){{< /tab >}}
+  {{< tab name="Two" >}}![](teac_3.png "Ok seems to fit."){{< /tab >}}
+  {{< tab name="Three" >}}![](teac_4.png "The final product."){{< /tab >}}
 
 {{< /tabs >}}
 

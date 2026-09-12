@@ -18,9 +18,9 @@ Mean Well has good mechanical drawings of their power supplies so I was able to 
 
 {{< tabs >}}
 
-  {{< tab name="Placement" >}}![](assets/power_1.png "Trying out power supply placements."){{< /tab >}}
-  {{< tab name="Drilling Template" >}}![](assets/power_2.png "Drilling template, from Mean Well mechanical drawings."){{< /tab >}}
-  {{< tab name="Final Wiring" >}}![](assets/power_3.png "Obsessive wiring detected."){{< /tab >}}
+  {{< tab name="Placement" >}}![](power_1.png "Trying out power supply placements."){{< /tab >}}
+  {{< tab name="Drilling Template" >}}![](power_2.png "Drilling template, from Mean Well mechanical drawings."){{< /tab >}}
+  {{< tab name="Final Wiring" >}}![](power_3.png "Obsessive wiring detected."){{< /tab >}}
 
 {{< /tabs >}}
 
@@ -30,7 +30,7 @@ There are a few common S-100 backplane designs available online. The original Al
 
 The Altair uses a totally passive backplane, so the only things I needed to populate were the power connector, fuses, and LEDs with their resistors. And of course nine expensive connectors, each with ONE HUNDRED PINS. It took a few evenings to get this soldered.
 
-![](assets/backplane.png)
+![](backplane.png)
 
 ### Front Panel
 
@@ -38,8 +38,8 @@ Somehow I don't have any photos of the front panel board under construction, but
 
 {{< tabs >}}
 
-  {{< tab name="Inside" >}}![](assets/fp_inside.png){{< /tab >}}
-  {{< tab name="Outside" >}}![](assets/fp_outside.png){{< /tab >}}
+  {{< tab name="Inside" >}}![](fp_inside.png){{< /tab >}}
+  {{< tab name="Outside" >}}![](fp_outside.png){{< /tab >}}
 
 {{< /tabs >}}
 
@@ -50,11 +50,11 @@ The front panel connects via a 50-pin ribbon cable to the front panel interface 
 The CPU card (from eBay) is a reproduction of the original card from MITS, which calls for some parts that are very obsolete and are hard to find. These I got from eBay (US sellers only; obsolete parts from Chinese sellers are almost always fake) and from [Unicorn Electronics](https://unicornelectronics.com), which is a strange business but the parts did eventually show up. For instructions I used the original Altair assembly manual from 1975.
 
 
-![](assets/cpu.png)
+![](cpu.png)
 
 The Intel 8080 has an asymmetric two-phase clock with fairly strict timing requirements, which is a challenge on this board because the clock circuit is dependent on slow mid-70s switching speeds. This is apparently a common point of frustration, so for the benefit of future builders: I got good clock timing with a 7404 (not LS, plain 7404) and 74LS123 for ICs P and Q; with 5.6k and 4.3k for R41 and R42.
 
-![](assets/timing.png)
+![](timing.png)
 
 With the CPU card installed I was able to use the front panel to step through addresses, which doesn't sound like much but it was very exciting. Next up was getting some memory in the machine.
 
@@ -64,16 +64,16 @@ The disk controller card I bought was an [FDC+](https://deramp.com/fdc_plus.html
 
 In any case I installed this card to get some memory going, and was finally able to toggle in and play Kill the Bit!
 
-<video src="assets/kill-the-bit.mp4" controls>Your browser does not support the video tag.</video>
+<video src="kill-the-bit.mp4" controls>Your browser does not support the video tag.</video>
 
 ### 88-2SIOJP
 
 Next up was getting serial communication working. For this I built up an [88-2SIOJP](https://deramp.com/2SIOJP.html). This card is a drop-in replacement for the MITS 88-2SIO with some extra conveniences like DIP switches for setting baud rates (the original card required soldering to do this). 
 
-![](assets/88-2SIOJP.png)
+![](88-2SIOJP.png)
 
 This board went together without undue drama and soon I was able to run the ROM monitor. Don't worry, I did manage to fix the cataracts on the ADM-3A.
 
-<video src="assets/monitor.mp4" controls>Your browser does not support the video tag.</video>
+<video src="monitor.mp4" controls>Your browser does not support the video tag.</video>
 
 So that's it for part one! Next up is getting floppies working, in [part two](../main_2/).
