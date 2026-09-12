@@ -2,4 +2,4 @@
 title: Projects
 ---
 
-I do a lot of projects, but there's nothing here! Working on it. I'll post on Mastodon as I add things.
+I take notes and photos when I'm working on projects, but I haven't really written any of them up. I'll be back-filling here for a while.

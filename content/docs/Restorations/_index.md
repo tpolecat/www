@@ -1,7 +1,6 @@
 ---
 title: Restorations
 type: docs
-draft: true
 ---
 
-Pages can be organized into folders.
+Restoring old hardware is a great way to learn how things work, assuming the things are old enough to be repairable.

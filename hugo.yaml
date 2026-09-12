@@ -13,7 +13,7 @@ markup:
 
 menu:
   main:
-    - name: Posts
+    - name: Blog
       pageRef: /blog
       weight: 1
     - name: Projects
@@ -30,6 +30,7 @@ menu:
         icon: mastodon
 
 params:
+
   navbar:
     displayTitle: true
     displayLogo: false

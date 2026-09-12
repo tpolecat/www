@@ -5,16 +5,17 @@ type: default
 
 <br/>
 
-# Serenity Now
+# Hi.
 
-Welcome. This is a collection of things that I find interesting, organized as:
+Welcome. This is a collection of things I like, organized as:
 
-- [**Posts**](blog/) for uncategorized things, in chronological order; and
+- [**Blog**](blog/) for uncategorized things, in chronological order; and
 - [**Projects**](docs/) for "completed" projects and information about my workspace.
 
-My guarantee to you, the reader:
+My guarantee to you:
 
 - No AI, ever.
 - Cat photos.
 - Nothing that will make you angry. We're all in this together.
 
+If you want to get in touch, send me a message on [Mastodon](https://mastodon.social/@tpolecat).
