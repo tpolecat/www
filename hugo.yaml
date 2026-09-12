@@ -1,5 +1,10 @@
 title: tpolecat industries
 theme: hextra
+
+caches:
+  images:
+    dir: :cacheDir/images
+    
 markup:
 
   # allow raw html
