@@ -103,10 +103,12 @@ jobs:
             echo "Git LFS detected, pulling resources..."
             git lfs install
             git lfs pull
+            git lfs checkout
+            git lfs status
           else
             echo "No Git LFS configuration or files found."
           fi
-          
+
       - name: Install Node.js dependencies
         run: |
           if [[ -f package-lock.json ]]; then
