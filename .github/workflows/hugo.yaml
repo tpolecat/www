@@ -32,7 +32,7 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-          lfs: false
+          lfs: true
 
       - name: Setup Pages
         id: pages
@@ -95,18 +95,6 @@ jobs:
           if [[ -f .gitmodules ]]; then
             echo "Initializing Git submodules..."
             git submodule update --init --recursive
-          fi
-
-      - name: Fetch Git LFS resources
-        run: |
-          if git lfs ls-files &>/dev/null; then
-            echo "Git LFS detected, pulling resources..."
-            git lfs install
-            git lfs pull
-            git lfs checkout
-            git lfs status
-          else
-            echo "No Git LFS configuration or files found."
           fi
 
       - name: Install Node.js dependencies
