@@ -64,7 +64,7 @@ The disk controller card I bought was an [FDC+](https://deramp.com/fdc_plus.html
 
 In any case I installed this card to get some memory going, and was finally able to toggle in and play Kill the Bit!
 
-<video src="assets/kill-the-bit.mov" controls>Your browser does not support the video tag.</video>
+<video src="assets/kill-the-bit.mp4" controls>Your browser does not support the video tag.</video>
 
 ### 88-2SIOJP
 
@@ -74,6 +74,6 @@ Next up was getting serial communication working. For this I built up an [88-2SI
 
 This board went together without undue drama and soon I was able to run the ROM monitor. Don't worry, I did manage to fix the cataracts on the ADM-3A.
 
-<video src="assets/monitor.mov" controls>Your browser does not support the video tag.</video>
+<video src="assets/monitor.mp4" controls>Your browser does not support the video tag.</video>
 
 So that's it for part one! Next up is getting floppies working, in [part two](../main_2/).

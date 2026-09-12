@@ -28,7 +28,7 @@ To get it running I hooked up minicom on my Mac to the first serial port and sta
 
 At this point I could boot Disk Basic and various flavors of CP/M.
 
-<video src="assets/boot.mov" controls>Your browser does not support the video tag.</video>
+<video src="assets/boot.mp4" controls>Your browser does not support the video tag.</video>
 
 ### Inauthentic Floppy Drives
 
