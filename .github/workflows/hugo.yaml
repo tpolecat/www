@@ -97,6 +97,16 @@ jobs:
             git submodule update --init --recursive
           fi
 
+      - name: Fetch Git LFS resources
+        run: |
+          if git lfs ls-files &>/dev/null; then
+            echo "Git LFS detected, pulling resources..."
+            git lfs install
+            git lfs pull
+          else
+            echo "No Git LFS configuration or files found."
+          fi
+          
       - name: Install Node.js dependencies
         run: |
           if [[ -f package-lock.json ]]; then
