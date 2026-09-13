@@ -110,5 +110,3 @@ After reassembly the screen was crystal clear. A very sasisfying repair.
 ![](final.png "Classic gaming.")
 
 
-### Resources
-
