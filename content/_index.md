@@ -15,7 +15,7 @@ Welcome. This is a collection of things I like, organized as:
 My guarantee to you:
 
 - No AI, ever.
-- Cat photos.
+- Lots of photos. Some containing cats.
 - Nothing that will make you angry. We're all in this together.
 
 If you want to get in touch, send me a message on [Mastodon](https://mastodon.social/@tpolecat).

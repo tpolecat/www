@@ -1,6 +1,6 @@
 ---
 title: Solid State Music VB-1
-draft: false
+draft: true
 ---
 
 {{< tabs >}}
