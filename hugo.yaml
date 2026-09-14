@@ -18,7 +18,7 @@ markup:
 
 menu:
   main:
-    - name: Blog
+    - name: Posts
       pageRef: /blog
       weight: 1
     - name: Projects

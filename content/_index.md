@@ -9,7 +9,7 @@ type: default
 
 Welcome. This is a collection of things I like, organized as:
 
-- [**Blog**](blog/) for uncategorized things, in chronological order; and
+- [**Posts**](blog/) for uncategorized things, in chronological order; and
 - [**Projects**](docs/) for "completed" projects and information about my workspace.
 
 My guarantee to you:
