@@ -1,3 +1,0 @@
----
-title: NTP Zone Clock
----
