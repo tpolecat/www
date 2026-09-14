@@ -4,7 +4,7 @@ draft = false
 title = 'I Fixed the Air Conditioner'
 +++
 
-![](lowes.png "Bad capacitor, wrong store.")
+![](lowes.png)
 
 The AC went out last night and it was 82° inside this morning. All the HVAC contractors are super busy in Texas in the summer, and the best we could get was an appointment in three days. Not good enough. So I decided to give it a look myself.
 
