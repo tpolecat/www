@@ -1,3 +1,7 @@
 public/
 themes/
 .DS_Store
+*.chp
+*.fus
+*.jed
+*.pin

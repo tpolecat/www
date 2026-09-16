@@ -1,0 +1,17 @@
+GAL16V8
+LOGIDEMO
+
+A  B  C  D  E  F  G   NC  NC  GND 
+NC NC NC NC NC QG QEF QCD QAB VCC
+
+; equations start here
+QAB = A & B
+QCD = C
+    # D
+QEF = E & /F
+    # F & /E
+QG  = /G
+
+DESCRIPTION
+Example GAL definition with several combinational logic gates.
+

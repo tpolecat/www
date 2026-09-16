@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<logicic>
+  <database type="LOGIC">
+    <custom name="whatever-you-want">
+      <ic name="logidemo" type="5" voltage="5V" pins="20">
+
+          <!-- AND gate at pins 1-2, output on 19 -->
+          <vector> 00 XX XX X XXG XXXXX X X X L V </vector>
+          <vector> 01 XX XX X XXG XXXXX X X X L V </vector>
+          <vector> 10 XX XX X XXG XXXXX X X X L V </vector>
+          <vector> 11 XX XX X XXG XXXXX X X X H V </vector>
+
+          <!-- OR gate at pins 3-4, output on 18 -->
+          <vector> XX 00 XX X XXG XXXXX X X L X V </vector>
+          <vector> XX 01 XX X XXG XXXXX X X H X V </vector>
+          <vector> XX 10 XX X XXG XXXXX X X H X V </vector>
+          <vector> XX 11 XX X XXG XXXXX X X H X V </vector>
+
+          <!-- XOR gate at pins 5-6, output on 17 -->
+          <vector> XX XX 00 X XXG XXXXX X L X X V </vector>
+          <vector> XX XX 01 X XXG XXXXX X H X X V </vector>
+          <vector> XX XX 10 X XXG XXXXX X H X X V </vector>
+          <vector> XX XX 11 X XXG XXXXX X L X X V </vector>
+
+          <!-- NOT gate at pins 7, output on 16 -->
+          <vector> XX XX XX 0 XXG XXXXX H X X X V </vector>
+          <vector> XX XX XX 1 XXG XXXXX L X X X V </vector>
+
+        </ic>
+    </custom>
+  </database>
+</logicic>    
