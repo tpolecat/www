@@ -1,6 +1,6 @@
 +++
 date = '2026-09-15T13:45:18-05:00'
-draft = true
+draft = false
 title = 'GALs by Example, Part 1'
 +++
 
@@ -122,11 +122,11 @@ There are four output files:
 | `logidemo.fus` | Human-readable tables for the fuses that will be set in the GAL. |
 | `logidemo.jed` | JEDEC file that we can actually program onto the GAL. |
 
-If things did *not* go well you may have been presented with an error message, and it might not make any sense. First try assembling with `-v`, which may provide more output. If the error is `Error: Not enough free memory!` it can mean a lot of things, including file not found. You'll have to mess around and figure out what's going on.
+If things did *not* go well you may have been presented with an error message, and it might not make any sense. If the error is `Error: Not enough free memory!` it can mean a lot of things, including file not found. You'll have to mess around and figure out what's going on.
 
 ### Programming
 
-Now that we have our JEDEC file we can program the GAL with [minipro](https://gitlab.com/DavidGriffith/minipro). See the repo's README for installation instructions; it's available on many package managers. You will also need a TL866 or [T48](https://www.amazon.com/s?k=T48+programmer) programmer, and it needs to be plugged in.
+Now that we have our JEDEC file we can program the GAL with [minipro](https://gitlab.com/DavidGriffith/minipro). See the repo's README for installation instructions; it's available on many package managers. You will also need a TL866 or [T48](https://www.amazon.com/s?k=T48+programmer) programmer, and it needs to be plugged into your computer.
 
 There are many variations of the GAL16V8, so check the list on minipro and see if yours shows up. Unless specified otherwise the package is DIP.
 
@@ -152,7 +152,9 @@ GAL16V8D@SOIC20
 $ _
 ```
 
-`GAL16V8D` seems to be the common modern variant (sometimes there are other letters before the `D`). Install your GAL in the programmer's ZIF socket, aligning it according to the indication on the programmer. Then program, using your best guess for the part number:
+`GAL16V8D` seems to be the common modern variant (sometimes there are other letters before the `D`).
+
+To program, place your GAL in the programmer's ZIF socket, aligning it according to the indication on the programmer. Then program, using your best guess for the part number:
 
 ```
 $ minipro -p GAL16V8D -w logidemo.jed
@@ -176,7 +178,7 @@ Verification OK
 $ _
 ```
 
-And that's it. You can put the GAL on a breadboard and try it out, or keep reading and write a unit test.  
+And that's it. You can put the GAL on a breadboard and try it out, or keep reading and write a unit test.  If programming fails, check the part number. If verification fails you may have a defective GAL. I just threw one in the trash for this reason.
 
 ### Testing
 
@@ -252,22 +254,29 @@ See this [post about testing GALs](../testing-gals/) for much more detail.
 
 ### Feedback
 
-Something we didn't us above that deserves mention here is **feedback**, which allows equations to mention outputs in their right-hand sides. For example, we could write equations that computes `AND` and `OR` and re-use these results to compute `XOR`.
+Something we didn't use above that deserves mention here is **feedback**, which allows equations to mention outputs in their right-hand sides. For example, we could write equations that computes `AND` and `OR` and re-use these results to compute `XOR`.
 
 ```pld
 QAND = A & B
 QOR  = A # B
-QXOR = OR & /AND
+QXOR = OR & /AND      ; this equation mentions *outputs*
 ```
 
-Feedback isn't strictly necessary in simple mode, but it can save some repetition. When we get to **registered** mode we will use it to see prior values stored on the previous clock cycle, allowing for sequential logic.
+Feedback isn't strictly necessary in simple mode, but it can save some repetition. When we get to **registered** mode we will use feedback to see prior values stored on the previous clock cycle, allowing for sequential logic.
+
+### Pullups
+
+The GAL16V8 provides active pullups for inputs and unassigned outputs, which allows (for example) an input to be connected to ground through a switch without an additional pull-up, becauese the floating input will be pulled to a logic high. 
+
+Pull-downs in the TL866 seem to make it impossible to create truly floating inputs for tests; inputs marked with an `X` seem to have indeterminate logic values. So you need to pop the GAL into a breadboard to test this behavior. An [99¢ Logic Probe](https://www.aliexpress.us/item/3256809162514046.html) is great for this kind of thing.
 
 ### Exercises
 
 I encourge you to do these exercises (or make up some of your own) before moving on to the next post.
 
-- Modify the testcase so that it fails.
-- Modify equations to ouput the `AND`, `OR`, and `XOR` for a single pair of inputs. Add some other relations like `NAND`. Feedback can be useful here.
+- Change `QCD` to compute NOR and verify that the test fails. Fix the test.
+- Use a breadboard to check the behavior of floating inputs and unused outputs.
+- Modify equations to ouput `AND`, `OR`, and `XOR` for a *single* pair of inputs. Add some other relations like `NAND`. Feedback can be useful here.
 - Build a half adder, taking inputs `A0` and `A1` and producing output `S` for the sum and `CO` for the carry out.
 - Build a full adder, taking inputs `A0` and `A1` as well as `CI` for carry in, producing output `S0` and `S1` for the sum and `CO` for final carry out.
 - Build a 7-segment LED decoder, taking inputs `D0` through `D3` and producing outputs `A` through `G` for the LED segments such that the hexadecimal value of the 4-bit input is displayed as `0`..`F`.
