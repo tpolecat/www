@@ -28,8 +28,8 @@ Time to make a real card so I could put the lid back on. I could have used the p
 Rev. B was much better, but still required a small bodge on the back. But it works fine and isn't an embarrasment so I'm calling this one good. I have four extras if anybody wants one. 
 
 {{< tabs >}}
-  {{< tab name="Rev. B" >}}![](revB.png){{< /tab >}}
-  {{< tab name="Wee Bodge" >}}![](revB_bodge.png){{< /tab >}}
+  {{< tab name="Rev. B" >}}![](revb.png){{< /tab >}}
+  {{< tab name="Wee Bodge" >}}![](revb_bodge.png){{< /tab >}}
 {{< /tabs >}}
 
 This was a fun project and it inspired me to make more cards (foreshadowing). 
