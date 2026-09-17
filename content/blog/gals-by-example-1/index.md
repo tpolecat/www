@@ -252,9 +252,13 @@ $ _
 
 See this [post about testing GALs](../testing-gals/) for much more detail.
 
-### Feedback
+### Other Features
 
-Something we didn't use above that deserves mention here is **feedback**, which allows equations to mention outputs in their right-hand sides. For example, we could write equations that computes `AND` and `OR` and re-use these results to compute `XOR`.
+Here are some other features that can be useful in simple mode. We will revisit these in later posts.
+
+#### Feedback
+
+Output pins provide **feedback**, which allows equations to mention outputs in their right-hand sides. For example, we could write equations that computes `AND` and `OR` and re-use these results to compute `XOR`.
 
 ```pld
 QAND = A & B
@@ -264,17 +268,32 @@ QXOR = OR & /AND      ; this equation mentions *outputs*
 
 Feedback isn't strictly necessary in simple mode, but it can save some repetition. When we get to **registered** mode we will use feedback to see prior values stored on the previous clock cycle, allowing for sequential logic.
 
-### Pullups
+#### Active-Low Pins
+
+When we write equations we should really think of `A` and `/A` as meaning pin A is logically **asserted** or **non-asserted**, as opposed to thinking about physical voltage. Pins are active-high by default, but we can mark pins as **active low** when we declare pin labels by preceding the label with a `/`. For instance, making this single change to our example above effectively changes the first gate from AND to NAND. 
+
+```
+A  B  C  D  E  F  G   NC  NC   GND 
+NC NC NC NC NC QG QEF QCD /QAB VCC
+```
+
+We still refer to the pin as `QAB` in the rest of our code and it's still asserted when `A` and `B` are both asserted, but assertion of `QAB` now means that the output will now be low rather than high. This also works for input pins; signals like "enable" are often active low. 
+
+The takeaway is that the choice of active-high or active-low is **orthogogonal** to your equations, which should be written in terms of assertion rather than physical logic level.
+
+
+#### Pullups
 
 The GAL16V8 provides active pullups for inputs and unassigned outputs, which allows (for example) an input to be connected to ground through a switch without an additional pull-up, becauese the floating input will be pulled to a logic high. 
 
-Pull-downs in the TL866 seem to make it impossible to create truly floating inputs for tests; inputs marked with an `X` seem to have indeterminate logic values. So you need to pop the GAL into a breadboard to test this behavior. An [99¢ Logic Probe](https://www.aliexpress.us/item/3256809162514046.html) is great for this kind of thing.
+Pull-downs in the TL866 programmer seem to make it impossible to create truly floating inputs for tests; inputs marked with an `X` seem to have indeterminate logic values. So you need to pop the GAL into a breadboard to test this behavior. An [99¢ Logic Probe](https://www.aliexpress.us/item/3256809162514046.html) is great for this kind of thing.
 
 ### Exercises
 
-I encourge you to do these exercises (or make up some of your own) before moving on to the next post.
+I encourge you to do some of these exercises (or make up some of your own) before moving on to the next post.
 
 - Change `QCD` to compute NOR and verify that the test fails. Fix the test.
+- Play around with active-low inputs and outputs until you're confident you understand how they work.
 - Use a breadboard to check the behavior of floating inputs and unused outputs.
 - Modify equations to ouput `AND`, `OR`, and `XOR` for a *single* pair of inputs. Add some other relations like `NAND`. Feedback can be useful here.
 - Build a half adder, taking inputs `A0` and `A1` and producing output `S` for the sum and `CO` for the carry out.
