@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<logicic>
+  <database type="LOGIC">
+    <custom name="whatever-you-want">
+      <ic name="shift" type="5" voltage="5V" pins="20">
+
+          <vector> C 01 1011 X X G 0 L X HLHH XXV </vector> <!-- Load -->
+          <vector> X XX XXXX X X G 1 Z X ZZZZ XXV </vector> <!-- Disable -->
+          <vector> X XX XXXX X X G 0 L X HLHH XXV </vector> <!-- Enable -->
+          <vector> C 11 XXXX X 0 G 0 H X LHHL XXV </vector> <!-- Shift a 0 -->
+          <vector> C 11 XXXX X 1 G 0 L X HHLH XXV </vector> <!-- Shift a 1 -->
+          <vector> C 11 XXXX X 1 G 0 H X HLHH XXV </vector> <!-- Shift a 1 -->
+          <vector> C X0 XXXX X X G 0 L X LLLL XXV </vector> <!-- Clear -->
+          
+        </ic>
+    </custom>
+  </database>
+</logicic>    

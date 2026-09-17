@@ -1,7 +1,7 @@
 +++
 date = '2026-09-17T09:43:53-05:00'
 draft = true
-title = 'Gals by Example, Part 2'
+title = 'GALs by Example, Part 2'
 +++
 
 In [part one](../gals-by-example-1/) we learned about using the GAL16V8 in **simple** mode, which allows only pure combinational logic. In this post we will learn how to use **tri-state logic** in **complex** mode.
