@@ -21,7 +21,7 @@ With this fix my prototype card worked.
 
 ### Real Card
 
-Time to make a real card so I could put the lid back on. I could have used the perfboard section on another protoboard, but I actually didn't need all the bus buffering so I decided to make my own card, which only needed seven ICs. Unfortunately I managed to miss a bunch of things in my schematic and the board required some light, uh bodging. I especially like the blue wire that wraps around to the back of the board.
+Time to make a real card so I could put the lid back on. I could have used the perfboard section on another protoboard, but I actually didn't need all the bus buffering so I decided to make my own card, which only needed seven ICs. Unfortunately I managed to miss a bunch of things in my schematic and the board required a lot of bodging. I especially like the blue wire that wraps around to the back of the board.
 
 ![](errors.png "Mistakes were made.")
 
