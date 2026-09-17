@@ -4,19 +4,17 @@
     <custom name="whatever-you-want">
       <ic name="buffer" type="5" voltage="5V" pins="20">
 
-          <!-- output disabled -->
-          <vector> 10 XXXXXXXG XX ZZZ ZZZ XV </vector>
-          <vector> 11 XXXXXXXG XX ZZZ ZZZ XV </vector>
-
           <!-- A to B  -->
           <vector> 01 XXXXXXXG XX 000 LLL XV </vector>
           <vector> 01 XXXXXXXG XX 101 HLH XV </vector>
           <vector> 01 XXXXXXXG XX 111 HHH XV </vector>
+          <vector> 11 XXXXXXXG XX 101 ZZZ XV </vector>
 
           <!-- B to A  -->
           <vector> 00 XXXXXXXG XX LLL 000 XV </vector>
           <vector> 00 XXXXXXXG XX HLH 101 XV </vector>
           <vector> 00 XXXXXXXG XX HHH 111 XV </vector>
+          <vector> 10 XXXXXXXG XX ZZZ 101 XV </vector>
 
         </ic>
     </custom>

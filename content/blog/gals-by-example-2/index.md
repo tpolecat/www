@@ -151,19 +151,17 @@ Our testing strategy is the same as in [part one](../gals-by-example-1/), with o
     <custom name="whatever-you-want">
       <ic name="buffer" type="5" voltage="5V" pins="20">
 
-          <!-- output disabled -->
-          <vector> 10 XXXXXXXG XX ZZZ ZZZ XV </vector>
-          <vector> 11 XXXXXXXG XX ZZZ ZZZ XV </vector>
-
           <!-- A to B  -->
           <vector> 01 XXXXXXXG XX 000 LLL XV </vector>
           <vector> 01 XXXXXXXG XX 101 HLH XV </vector>
           <vector> 01 XXXXXXXG XX 111 HHH XV </vector>
+          <vector> 11 XXXXXXXG XX 101 ZZZ XV </vector>
 
           <!-- B to A  -->
           <vector> 00 XXXXXXXG XX LLL 000 XV </vector>
           <vector> 00 XXXXXXXG XX HLH 101 XV </vector>
           <vector> 00 XXXXXXXG XX HHH 111 XV </vector>
+          <vector> 10 XXXXXXXG XX ZZZ 101 XV </vector>
 
         </ic>
     </custom>
@@ -184,16 +182,16 @@ Device code: 02106811
 Serial code: N95SXK8LUBRHLHXHQG4Y
 USB speed: 12Mbps (USB 1.1)
       1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 
-0000: 1  0  X  X  X  X  X  X  X  G  X  X  Z  Z  Z  Z  Z  Z  X  V  
-0001: 1  1  X  X  X  X  X  X  X  G  X  X  Z  Z  Z  Z  Z  Z  X  V  
-0002: 0  1  X  X  X  X  X  X  X  G  X  X  0  0  0  L  L  L  X  V  
-0003: 0  1  X  X  X  X  X  X  X  G  X  X  1  0  1  H  L  H  X  V  
-0004: 0  1  X  X  X  X  X  X  X  G  X  X  1  1  1  H  H  H  X  V  
-0005: 0  0  X  X  X  X  X  X  X  G  X  X  L  L  L  0  0  0  X  V  
-0006: 0  0  X  X  X  X  X  X  X  G  X  X  H  L  H  1  0  1  X  V  
-0007: 0  0  X  X  X  X  X  X  X  G  X  X  H  H  H  1  1  1  X  V  
+0000: 0  1  X  X  X  X  X  X  X  G  X  X  0  0  0  L  L  L  X  V  
+0001: 0  1  X  X  X  X  X  X  X  G  X  X  1  0  1  H  L  H  X  V  
+0002: 0  1  X  X  X  X  X  X  X  G  X  X  1  1  1  H  H  H  X  V  
+0003: 1  1  X  X  X  X  X  X  X  G  X  X  1  0  1  Z  Z  Z  X  V  
+0004: 0  0  X  X  X  X  X  X  X  G  X  X  L  L  L  0  0  0  X  V  
+0005: 0  0  X  X  X  X  X  X  X  G  X  X  H  L  H  1  0  1  X  V  
+0006: 0  0  X  X  X  X  X  X  X  G  X  X  H  H  H  1  1  1  X  V  
+0007: 1  0  X  X  X  X  X  X  X  G  X  X  Z  Z  Z  1  0  1  X  V  
 Logic test successful.
-$ 
+$ _ 
 ```
 
 ### Exercises
