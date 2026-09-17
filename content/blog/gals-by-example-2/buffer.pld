@@ -1,0 +1,28 @@
+GAL16V8
+BUFFER
+
+/OE DAB NC NC NC NC NC NC NC GND 
+NC  NC  A0 A1 A2 B0 B1 B2 NC VCC
+
+; A -> B when enabled and DAB is asserted
+
+B0.T = A0
+B1.T = A1
+B2.T = A2
+
+B0.EN = OE & DAB
+B1.EN = OE & DAB
+B2.EN = OE & DAB
+
+; B -> A when enabled and DAB is disasserted
+
+A0.T = B0
+A1.T = B1
+A2.T = B2
+
+A0.EN = OE & /DAB
+A1.EN = OE & /DAB
+A2.EN = OE & /DAB
+
+DESCRIPTION
+A 3-bit bidirectional buffer.
