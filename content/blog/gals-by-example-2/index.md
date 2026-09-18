@@ -1,6 +1,6 @@
 +++
 date = '2026-09-18T09:43:53-05:00'
-draft = true
+draft = false
 title = 'GALs by Example, Part 2'
 +++
 
@@ -142,7 +142,7 @@ $ _
 
 ### Testing
 
-Our testing strategy is the same as in [part one](../gals-by-example-1/), with one difference: when output is disabled we want to verify that the outputs are indeed disconnected. For this we use the `Z` output state.
+Our testing strategy is the same as in [part one](../gals-by-example-1/), with one difference: when output is disabled we want to verify that the outputs are indeed high-impedance. For this we use the `Z` output state.
 
 ```xml {filename="buffer.xml"}
 <?xml version="1.0" encoding="utf-8"?>
