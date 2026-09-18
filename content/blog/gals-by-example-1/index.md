@@ -98,7 +98,7 @@ Before we assemble our source we need to install [GALasm](https://github.com/dav
 And now, we assemble:
 
 ```
-galasm (main)$ galasm -v logidemo.pld
+$ galasm -v logidemo.pld
 GALasm 2.1, Portable GAL Assembler
 Copyright (c) 1998-2003 Alessandro Zummo. All Rights Reserved
 Original sources Copyright (c) 1991-96 Christian Habermann
@@ -131,7 +131,7 @@ Now that we have our JEDEC file we can program the GAL with [minipro](https://gi
 There are many variations of the GAL16V8, so check the list on minipro and see if yours shows up. Unless specified otherwise the package is DIP.
 
 ```
-galasm (main)$ minipro -L GAL16V8
+$ minipro -L GAL16V8
 Found TL866II+ 04.2.123 (0x27b)
 Warning: Firmware is out of date.
   Expected  04.2.132 (0x284)

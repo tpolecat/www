@@ -1,5 +1,5 @@
 +++
-date = '2026-09-17T09:43:53-05:00'
+date = '2026-09-18T09:43:53-05:00'
 draft = true
 title = 'GALs by Example, Part 2'
 +++
@@ -169,7 +169,9 @@ Our testing strategy is the same as in [part one](../gals-by-example-1/), with o
 </logicic>    
 ```
 
-We run tests as before.
+Note that disabled outputs retain a weak pull-up, so pins marked `Z` will measure high in isolation but will easily be swamped by active signals. Minipro detects this state by ensuring that the line can easily be pulled in either direction.
+
+We run our tests as before.
 
 ```
 $ minipro -T -p buffer --logicic buffer.xml
@@ -197,3 +199,4 @@ $ _
 ### Exercises
 
 - Turn this into an **inverting** buffer.
+- Investigate the behavior of disabled outputs on a breadboard. Your [99¢ Logic Probe](https://www.aliexpress.us/item/3256809162514046.html) will show disabled lines as high. How strong is the pull-up?
