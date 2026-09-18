@@ -16,7 +16,8 @@ Q2.R    = /CLR &  LOAD & D2
 Q3.R    = /CLR &  LOAD & D3
         # /CLR & /LOAD & Q2
 
-SDOUT.R = /CLR & /LOAD & Q3
+SDOUT.R = /CLR &  LOAD & D3
+        # /CLR & /LOAD & Q2
 
 DESCRIPTION
 A 4-bit parallel load shift register.

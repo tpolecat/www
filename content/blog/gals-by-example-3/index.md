@@ -25,7 +25,7 @@ A common task in electronics is turning serial data into a paralle data, which w
 
 ![](shift.svg)
 
-Bits shift in via `SDIN` on the rising edge of `CLK`, through bits `Q0`, `Q1`, `Q2`, `Q3`, and finally `SDOUT`. If `/LOAD` is asserted then the values on `D[0:4]` are copied to `Q[0:4]` on the rising clock. If `/CLR` is asserted then all bits are cleared on the rising clock.
+Bits shift in via `SDIN` on the rising edge of `CLK`, through bits `Q0`, `Q1`, `Q2`, `Q3`. `SDOUT` is identical to `Q3`. If `/LOAD` is asserted then the values on `D[0:4]` are copied to `Q[0:4]` on the rising clock. If `/CLR` is asserted then all bits are cleared on the rising clock.
 
 Here is the GALasm source in its entirety.
 
@@ -48,7 +48,8 @@ Q2.R    = /CLR &  LOAD & D2
 Q3.R    = /CLR &  LOAD & D3
         # /CLR & /LOAD & Q2
 
-SDOUT.R = /CLR & /LOAD & Q3
+SDOUT.R = /CLR &  LOAD & D3
+        # /CLR & /LOAD & Q2
 
 DESCRIPTION
 A 4-bit parallel load shift register.
@@ -70,11 +71,11 @@ Here is a test suite for the shift register. Note the use of the `C` token for p
     <custom name="whatever-you-want">
       <ic name="shift" type="5" voltage="5V" pins="20">
 
-          <vector> C 01 1011 X X G 0 L X HLHH XXV </vector> <!-- Load -->
+          <vector> C 01 1011 X X G 0 H X HLHH XXV </vector> <!-- Load -->
           <vector> X XX XXXX X X G 1 Z X ZZZZ XXV </vector> <!-- Disable -->
-          <vector> X XX XXXX X X G 0 L X HLHH XXV </vector> <!-- Enable -->
-          <vector> C 11 XXXX X 0 G 0 H X LHHL XXV </vector> <!-- Shift a 0 -->
-          <vector> C 11 XXXX X 1 G 0 L X HHLH XXV </vector> <!-- Shift a 1 -->
+          <vector> X XX XXXX X X G 0 H X HLHH XXV </vector> <!-- Enable -->
+          <vector> C 11 XXXX X 0 G 0 L X LHHL XXV </vector> <!-- Shift a 0 -->
+          <vector> C 11 XXXX X 1 G 0 H X HHLH XXV </vector> <!-- Shift a 1 -->
           <vector> C 11 XXXX X 1 G 0 H X HLHH XXV </vector> <!-- Shift a 1 -->
           <vector> C X0 XXXX X X G 0 L X LLLL XXV </vector> <!-- Clear -->
           
@@ -86,6 +87,6 @@ Here is a test suite for the shift register. Note the use of the `C` token for p
 
 ### Exercises
 
+- Program two shift registers and chain them together through `SDOUT` and `SDIN` to create an 8-bit shift register.
 - Write a 4-bit counter.
-- Program two of these and chain them together through `SDOUT` and `SDIN` to create an 8-bit shift register.
 
