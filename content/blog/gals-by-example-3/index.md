@@ -1,6 +1,6 @@
 +++
-date = '2026-09-19T13:28:53-05:00'
-draft = true
+date = '2026-09-19T09:28:53-05:00'
+draft = false
 title = 'GALs by Example, Part 3'
 +++
 
