@@ -1,5 +1,5 @@
 +++
-date = '2026-09-17T13:28:53-05:00'
+date = '2026-09-19T13:28:53-05:00'
 draft = true
 title = 'GALs by Example, Part 3'
 +++
