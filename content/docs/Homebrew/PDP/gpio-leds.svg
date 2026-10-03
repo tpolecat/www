@@ -19,13 +19,13 @@
     </marker>
   </defs>
   <metadata> Produced by OmniGraffle 7.8.1 
-    <dc:date>2026-09-19 17:23:58 +0000</dc:date>
+    <dc:date>2026-10-01 16:01:00 +0000</dc:date>
   </metadata>
   <g id="Canvas_1" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none">
     <title>Canvas 1</title>
     <g id="Canvas_1: Layer 1">
       <title>Layer 1</title>
-      <g id="Group_1122">
+      <g id="Group_1124">
         <g id="Graphic_1117">
           <path d="M 1929.325 125.5 L 1954.175 125.5 C 1957.1144 125.5 1959.5 131.436 1959.5 138.75 C 1959.5 146.064 1957.1144 152 1954.175 152 L 1929.325 152 C 1926.3856 152 1924 146.064 1924 138.75 C 1924 131.436 1926.3856 125.5 1929.325 125.5 Z" fill="white"/>
           <text transform="translate(1932.55 129.526)" fill="black">
@@ -274,7 +274,7 @@
           <path d="M 1726.825 125.5 L 1793.675 125.5 C 1801.5824 125.5 1808 131.436 1808 138.75 C 1808 146.064 1801.5824 152 1793.675 152 L 1726.825 152 C 1718.9176 152 1712.5 146.064 1712.5 138.75 C 1712.5 131.436 1718.9176 125.5 1726.825 125.5 Z" fill="white"/>
           <path d="M 1726.825 125.5 L 1793.675 125.5 C 1801.5824 125.5 1808 131.436 1808 138.75 C 1808 146.064 1801.5824 152 1793.675 152 L 1726.825 152 C 1718.9176 152 1712.5 146.064 1712.5 138.75 C 1712.5 131.436 1718.9176 125.5 1726.825 125.5 Z" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
           <text transform="translate(1722.05 129.526)" fill="black">
-            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="10.784" y="15">CLOCK</tspan>
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="19.536" y="15">GPW</tspan>
           </text>
         </g>
         <g id="Graphic_1120">
@@ -283,6 +283,10 @@
           <text transform="translate(1969.05 368.026)" fill="black">
             <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="24.568" y="15">/OE</tspan>
           </text>
+        </g>
+        <g id="Graphic_1123">
+          <path d="M 1843.5 132.65 L 1854.1 138.75 L 1843.5 144.85 Z" fill="white"/>
+          <path d="M 1843.5 132.65 L 1854.1 138.75 L 1843.5 144.85 Z" stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
         </g>
       </g>
     </g>

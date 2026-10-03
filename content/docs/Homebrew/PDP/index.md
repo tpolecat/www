@@ -6,7 +6,7 @@ title = 'PDP-11/Hack'
 
 My PDP-11/Hack is loosely based on this [DCJ11 Single Board Computer](https://www.5volts.ch/pages/dcj11sbc/) design. I deviate from the design in a few places, but I definitely would have had a much harder time figuring this all out on my own. So I thank the author for their generosity in sharing so much knowledge.
 
-My goal here is to spell out my specific implementation in sufficient detail to allow future me to pick it back up and continue hacking. It's also built on a huge perfboard with color-coded and labeled wires so it's easy to see where everything goes.
+My goal here is to spell out my specific implementation in sufficient detail to allow future me to pick it back up and continue hacking. It's built on a huge perfboard with color-coded and labeled wires so it's easier to see where everything goes.
 
 If you're reading along you should definitely have a copy of the **DCJ11 Microprocessor Users Guide** which you can find at [DEC Manuals](https://wfjm.github.io/home/w11/info/manuals.html) and elsewhere.
 
@@ -18,7 +18,7 @@ If you're reading along you should definitely have a copy of the **DCJ11 Micropr
 
 ### Control and Address Latching
 
-{{<badge content="/ALE" color="purple">}} is the main signal indicating the start of an instruction cycle. It is our indication that it's time to latch the address lines and a handful of control signals. We latch and rename (and recolor) the following:
+{{<badge content="/ALE" color="purple">}} indicates the start of an instruction cycle. We use it to clock the following values into [74HCT576](https://www.ti.com/product/SN74HCT574) latches.
 
 | CPU Signal  | Latched Signal | Description |
 | :---- | :-- | :-- |
@@ -37,12 +37,12 @@ From the latched signals we derive the following control signals via a GAL22V10.
 | {{<badge content="/MISS" color="purple">}}  | CPU      | Cache miss, asserted only for non-existing memory. |
 | {{<badge content="/CONT" color="purple">}}  | CPU      | Continue. Delay this signal when we're writing to the UARTs. |
 | {{<badge content="/GPR" color="blue">}}     | GPIO     | GPIO read. Assert startup word onto data bus. |
-| {{<badge content="/GPW" color="blue">}}     | GPIO     | GPIO write. Strobe GPIO decoder lines into LED indicator driver. |
+| {{<badge content="GPW" color="blue">}}      | GPIO     | GPIO write. Strobe GPIO decoder lines into LED indicator driver. |
 | {{<badge content="/WEL" color="blue">}}     | RAM/UART | Write-enable low. Move lower-order data from bus into RAM/UART. |
 | {{<badge content="/WEU" color="blue">}}     | RAM/UART | Write-enable upper. Move high-order data from bus into RAM/UART. |
-| {{<badge content="/CE" color="blue">}}      | RAM      | RAM chip enable. Assert when reading or writing RAM. |
-| {{<badge content="/IO" color="blue">}}      | UART     | UART chip enable. Assert when reading or writing to UART. |
-| {{<badge content="/MOE" color="blue">}}     | RAM/UART | Output to data bus. Assert when reading from RAM/UART. |
+| {{<badge content="/MOE" color="blue">}}     | RAM/UART | Read enable. Move data from RAM/UART onto bus. |
+| {{<badge content="/CE" color="blue">}}      | RAM      | RAM chip enable. Select RAM as read/write source. |
+| {{<badge content="/IO" color="blue">}}      | UART     | UART chip enable. Select UART as read/write source. |
 
 TODO:
   - rename `/CE` to `/RCE`
@@ -58,7 +58,7 @@ GAL22V10
 CTLDECODE
 
 LAIO0 LAIO1  LAIO2 LAIO3 LBS0 LBS1 A0  NXM /SCTL /BUFCTL NC    GND
-NC    /ABORT /MISS /CONT /GPR  /GPW  /WEL /WEU /CE /IO   /MOE   VCC
+NC    /ABORT /MISS /CONT /GPR GPW  /WEL /WEU /CE /IO   /MOE   VCC
 
 ; Loosely based on https://www.5volts.ch/pages/dcj11sbc/040-dcj11-gal-decoder/
 
@@ -115,8 +115,7 @@ DESCRIPTION
 
 GPIO write cycles emit diagnostic information during boot and during entry/exit from ODT. We want to capture this information
 and display it on LEDs. This could probably be done with a single GAL but I split out the decode phase in order to simplify
-the LED driver. This is pure combinational logic and is decoded continuously, but is ignored by the GPIO latch unless `/GPW`
-is asserted.
+the LED driver. This is pure combinational logic and is decoded continuously.
 
 | Signal | Description |
 | :--- | :--- |
@@ -151,6 +150,10 @@ This decodes the GPIO write codes we care about.
 
 
 ### GPIO Latch
+
+The GPIO latch is clocked by {{<badge content="GPW" color="blue">}} (general-purpose write) from the control decoder. The ODT and test 
+outputs drive status LEDs. The {{<badge content="/RST" color="blue">}} output drives peripheral reset, which is just the UARTs
+initially.
 
 ![](gpio-leds.svg "GPIO Latch")
 
